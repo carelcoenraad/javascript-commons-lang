@@ -12,19 +12,19 @@ describe('isEmpty()', () => {
       expected: false,
       value: ['test']
     },
-    ...falsyValues.map(falsyValue => ({
+    ...falsyValues.map((falsyValue) => ({
       expected: false,
       value: falsyValue
     })),
     ...truthyValues
-      .filter(truthyValue => !Array.isArray(truthyValue))
-      .map(truthyValue => ({
+      .filter((truthyValue) => !Array.isArray(truthyValue))
+      .map((truthyValue) => ({
         expected: false,
         value: truthyValue
       }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} is empty`, () => {
       assert.equal(isEmpty(test.value), test.expected);
     });

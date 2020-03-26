@@ -13,18 +13,18 @@ describe('isNull()', () => {
       value: 'null'
     },
     ...falsyValues
-      .filter(falsyValue => falsyValue !== null)
-      .map(falsyValue => ({
+      .filter((falsyValue) => falsyValue !== null)
+      .map((falsyValue) => ({
         expected: false,
         value: falsyValue
       })),
-    ...truthyValues.map(truthyValue => ({
+    ...truthyValues.map((truthyValue) => ({
       expected: false,
       value: truthyValue
     }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} is null`, () => {
       assert.equal(isNull(test.value), test.expected);
     });

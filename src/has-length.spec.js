@@ -20,24 +20,24 @@ describe('hasLength()', () => {
       expected: false,
       value: []
     },
-    ...falsyValues.map(falsyValue => ({
+    ...falsyValues.map((falsyValue) => ({
       expected: false,
       value: falsyValue
     })),
     ...truthyValues
       .filter(
-        truthyValue =>
+        (truthyValue) =>
           !Array.isArray(truthyValue) &&
           truthyValue !== '0' &&
           truthyValue !== 'false'
       )
-      .map(truthyValue => ({
+      .map((truthyValue) => ({
         expected: false,
         value: truthyValue
       }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} has length`, () => {
       assert.equal(hasLength(test.value), test.expected);
     });

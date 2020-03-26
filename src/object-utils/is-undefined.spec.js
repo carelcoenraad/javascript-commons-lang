@@ -13,18 +13,18 @@ describe('isUndefined()', () => {
       value: 'undefined'
     },
     ...falsyValues
-      .filter(falsyValue => typeof falsyValue !== 'undefined')
-      .map(falsyValue => ({
+      .filter((falsyValue) => typeof falsyValue !== 'undefined')
+      .map((falsyValue) => ({
         expected: false,
         value: falsyValue
       })),
-    ...truthyValues.map(truthyValue => ({
+    ...truthyValues.map((truthyValue) => ({
       expected: false,
       value: truthyValue
     }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} is undefined`, () => {
       assert.equal(isUndefined(test.value), test.expected);
     });

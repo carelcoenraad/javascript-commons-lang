@@ -13,18 +13,18 @@ describe('nullifyEmptyString()', () => {
       value: 'test'
     },
     ...falsyValues
-      .filter(falsyValue => falsyValue !== '')
-      .map(falsyValue => ({
+      .filter((falsyValue) => falsyValue !== '')
+      .map((falsyValue) => ({
         expected: falsyValue,
         value: falsyValue
       })),
-    ...truthyValues.map(truthyValue => ({
+    ...truthyValues.map((truthyValue) => ({
       expected: truthyValue,
       value: truthyValue
     }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`converts ${test.value} to ${test.expected}`, () => {
       assert.deepEqual(nullifyEmptyString(test.value), test.expected);
     });

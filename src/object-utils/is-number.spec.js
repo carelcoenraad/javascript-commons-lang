@@ -13,14 +13,14 @@ describe('isNumber()', () => {
     { expected: true, value: -Infinity },
     { expected: true, value: NaN },
     ...falsyValues
-      .filter(falsyValue => falsyValue !== 0 && !Number.isNaN(falsyValue))
-      .map(falsyValue => ({
+      .filter((falsyValue) => falsyValue !== 0 && !Number.isNaN(falsyValue))
+      .map((falsyValue) => ({
         expected: false,
         value: falsyValue
       })),
     ...truthyValues
       .filter(
-        truthyValue =>
+        (truthyValue) =>
           truthyValue !== 42 &&
           truthyValue !== -42 &&
           truthyValue !== 3.14 &&
@@ -28,13 +28,13 @@ describe('isNumber()', () => {
           truthyValue !== Infinity &&
           truthyValue !== -Infinity
       )
-      .map(truthyValue => ({
+      .map((truthyValue) => ({
         expected: false,
         value: truthyValue
       }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} is a number`, () => {
       assert.equal(isNumber(test.value), test.expected);
     });

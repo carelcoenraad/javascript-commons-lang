@@ -21,20 +21,20 @@ describe('isBoolean()', () => {
       value: 'false'
     },
     ...falsyValues
-      .filter(falsyValue => falsyValue !== false)
-      .map(falsyValue => ({
+      .filter((falsyValue) => falsyValue !== false)
+      .map((falsyValue) => ({
         expected: false,
         value: falsyValue
       })),
     ...truthyValues
-      .filter(truthyValue => truthyValue !== true)
-      .map(truthyValue => ({
+      .filter((truthyValue) => truthyValue !== true)
+      .map((truthyValue) => ({
         expected: false,
         value: truthyValue
       }))
   ];
 
-  tests.forEach(test => {
+  tests.forEach((test) => {
     it(`checks if ${test.value} is a boolean`, () => {
       assert.equal(isBoolean(test.value), test.expected);
     });
