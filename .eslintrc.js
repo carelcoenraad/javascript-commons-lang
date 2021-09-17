@@ -3,7 +3,11 @@ module.exports = {
   env: {
     mocha: true
   },
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:jsdoc/recommended'
+  ],
   parser: '@babel/eslint-parser',
   root: true,
   rules: {
